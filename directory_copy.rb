@@ -37,6 +37,22 @@ def print(students)
   end
 end
 
+def print_by_cohort(students)
+  cohort_hash = {}
+  students.each do |student| 
+    cohort = student[:cohort]
+    name = student[:name]
+    if cohort_hash[cohort] == nil
+      cohort_hash[cohort] = [name]
+    else
+      cohort_hash[cohort].push(name)
+    end
+  end
+  cohort_hash.each do |key, value|
+    puts "#{key.to_s}: #{value.join(", ")}"
+  end
+end
+
 def print_footer(students)
   puts "Overall, we have #{students.count} great students"
 end
@@ -45,4 +61,5 @@ end
 students = input_students
 print_header
 print(students)
+print_by_cohort(students)
 print_footer(students)
