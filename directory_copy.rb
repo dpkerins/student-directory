@@ -13,7 +13,11 @@ def input_students
     cohort = gets.chomp
     #add student and cohort to the array
     !cohort.empty? ? students << {name: name, cohort: cohort} : students << {name: name, cohort: "unassigned"}
-    puts "Now we have #{students.count} students"
+    if students.count == 1
+      puts "Now we have 1 student"
+    else
+      puts "Now we have #{students.count} students"
+    end
     #get another name from the user
     puts "Please enter the names of the student"
     puts "To finish, just hit return twice"
@@ -54,7 +58,11 @@ def print_by_cohort(students)
 end
 
 def print_footer(students)
-  puts "Overall, we have #{students.count} great students"
+  if students.count == 1
+    puts "Overall, we have 1 great student"
+  else 
+    puts "Overall, we have #{students.count} great students"
+  end
 end
 
 #nothing happens until we call the methods
