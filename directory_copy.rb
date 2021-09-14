@@ -26,7 +26,7 @@ def print(students)
   index = 0
   while students[index]
     student = students[index]
-    puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)"
+    puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)".center(50)
     index += 1
   end
 end
